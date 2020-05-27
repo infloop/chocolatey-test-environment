@@ -128,8 +128,9 @@ Write-Output "Testing package if a line is uncommented."
 # THIS IS WHAT YOU CHANGE
 # - uncomment one of the two and edit it appropriately
 # - See the README for details
-#choco.exe install -fdvy INSERT_NAME --version INSERT_VERSION  --allow-downgrade
-#choco.exe install -fdvy INSERT_NAME  --allow-downgrade --source "'c:\\packages;http://chocolatey.org/api/v2/'"
+#choco.exe install -fdvy mgs-atomicheart-build --version INSERT_VERSION  --allow-downgrade
+choco.exe pack "c:\\packages\\mgs-atomicheart-build\\mgs-atomicheart-build.nuspec" --outputdirectory "c:\\packages\\"
+choco.exe install -fdvy mgs-atomicheart-build  --allow-downgrade --source "'c:\\packages\\;http://chocolatey.org/api/v2/'" --params "'/USER:packagebot /PASS:%^hfgh34dfg34wxf '"
 
 $exitCode = $LASTEXITCODE
 
